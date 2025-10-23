@@ -12,6 +12,7 @@ import Cultures from "./pages/Cultures";
 import CultureDetail from "./pages/CultureDetail";
 import Sustainability from "./pages/Sustainability";
 import Stories from "./pages/Stories";
+import StoryDetail from "./pages/StoryDetail";
 
 function Router() {
   return (
@@ -21,6 +22,7 @@ function Router() {
       <Route path={"/cultures/:id"} component={CultureDetail} />
       <Route path={"/sustainability"} component={Sustainability} />
       <Route path={"/stories"} component={Stories} />
+      <Route path={"/stories/:id"} component={StoryDetail} />
       <Route path={"/marketplace"} component={Marketplace} />
       <Route path={"/marketplace/:id"} component={TribeDetail} />
       <Route path={"/404"} component={NotFound} />

@@ -90,6 +90,22 @@ const translations: Record<Language, Record<string, string>> = {
     'tribe.features': '永續特色',
     'tribe.support.title': '您的購買將直接支持',
     
+    // Stories Page
+    'stories.title': '深度故事',
+    'stories.subtitle': '走進部落,聆聽土地與人的對話。這些故事記錄著原住民族如何在傳統與現代之間,找到文化傳承與永續發展的平衡之道。',
+    'stories.category.youth': '返鄉青年',
+    'stories.category.culture': '文化復振',
+    'stories.category.agriculture': '永續農業',
+    'stories.category.craft': '工藝創新',
+    'stories.category.ecology': '生態保育',
+    'stories.category.community': '社區營造',
+    'stories.readfull': '閱讀完整故事',
+    'stories.loadmore': '載入更多故事',
+    'stories.share.title': '分享您的部落故事',
+    'stories.share.desc': '如果您有部落的精彩故事想要分享,或是正在進行文化復振、永續發展的計畫,歡迎與我們聯繫,讓更多人看見原住民族的當代實踐。',
+    'stories.share.submit': '投稿故事',
+    'stories.readtime': '分鐘',
+
     // Footer
     'footer.tagline': '以文化為眼,凝視島嶼。透過原住民族的智慧與實踐,探索永續生活的可能性。',
     'footer.quicklinks': '快速連結',
@@ -178,6 +194,22 @@ const translations: Record<Language, Record<string, string>> = {
     'tribe.features': 'Sustainability Features',
     'tribe.support.title': 'Your Purchase Directly Supports',
     
+    // Stories Page
+    'stories.title': 'In-Depth Stories',
+    'stories.subtitle': 'Enter the tribes and listen to the dialogue between land and people. These stories document how indigenous peoples find balance between tradition and modernity, cultural heritage and sustainable development.',
+    'stories.category.youth': 'Returning Youth',
+    'stories.category.culture': 'Cultural Revival',
+    'stories.category.agriculture': 'Sustainable Agriculture',
+    'stories.category.craft': 'Craft Innovation',
+    'stories.category.ecology': 'Ecological Conservation',
+    'stories.category.community': 'Community Building',
+    'stories.readfull': 'Read Full Story',
+    'stories.loadmore': 'Load More Stories',
+    'stories.share.title': 'Share Your Tribal Story',
+    'stories.share.desc': 'If you have an inspiring tribal story to share, or are working on cultural revival and sustainable development projects, please contact us to let more people see the contemporary practices of indigenous peoples.',
+    'stories.share.submit': 'Submit Story',
+    'stories.readtime': 'min read',
+
     // Footer
     'footer.tagline': 'Seeing the island through culture. Exploring sustainable living through indigenous wisdom and practices.',
     'footer.quicklinks': 'Quick Links',
