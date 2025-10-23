@@ -4,15 +4,19 @@
   <meta charset="utf-8">
   <title>Island Voices</title>
   <script type="text/javascript">
-    // GitHub Pages hack for SPA routing
-    // Redirect any path to index.html with the path as a query parameter
+    // GitHub Pages SPA redirect
     var pathSegmentsToKeep = 1;
     var l = window.location;
+    
+    // Extract the path after /island-voices/
+    var segments = l.pathname.split('/').filter(Boolean);
+    var redirectPath = segments.slice(pathSegmentsToKeep).join('/');
+    
+    // Redirect to index.html with the path encoded
     l.replace(
       l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + 
-      '/?/' + 
-      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+      '/' + segments.slice(0, pathSegmentsToKeep).join('/') + 
+      '/?p=/' + redirectPath +
       (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
       l.hash
     );
