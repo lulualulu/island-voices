@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, Router as WouterRouter } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
@@ -16,21 +16,26 @@ import StoryDetail from "./pages/StoryDetail";
 import About from "./pages/About";
 
 function Router() {
+  // Get the base path for GitHub Pages
+  const base = import.meta.env.PROD ? "/island-voices" : "";
+  
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/cultures"} component={Cultures} />
-      <Route path={"/cultures/:id"} component={CultureDetail} />
-      <Route path={"/sustainability"} component={Sustainability} />
-      <Route path={"/stories"} component={Stories} />
-      <Route path={"/stories/:id"} component={StoryDetail} />
-      <Route path={"/marketplace"} component={Marketplace} />
-      <Route path={"/marketplace/:id"} component={TribeDetail} />
-      <Route path={"/about"} component={About} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <WouterRouter base={base}>
+      <Switch>
+        <Route path={"/"} component={Home} />
+        <Route path={"/cultures"} component={Cultures} />
+        <Route path={"/cultures/:id"} component={CultureDetail} />
+        <Route path={"/sustainability"} component={Sustainability} />
+        <Route path={"/stories"} component={Stories} />
+        <Route path={"/stories/:id"} component={StoryDetail} />
+        <Route path={"/marketplace"} component={Marketplace} />
+        <Route path={"/marketplace/:id"} component={TribeDetail} />
+        <Route path={"/about"} component={About} />
+        <Route path={"/404"} component={NotFound} />
+        {/* Final fallback route */}
+        <Route component={NotFound} />
+      </Switch>
+    </WouterRouter>
   );
 }
 
