@@ -16,7 +16,7 @@
     l.replace(
       l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
       '/' + segments.slice(0, pathSegmentsToKeep).join('/') + 
-      '/?p=/' + redirectPath +
+      '/?p=' + (redirectPath ? '/' + redirectPath : '') +
       (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
       l.hash
     );

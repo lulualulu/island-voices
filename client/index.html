@@ -23,7 +23,9 @@
           var query = new URLSearchParams(l.search.substring(1));
           if (query.has('p')) {
             var path = query.get('p');
-            window.history.replaceState(null, null, l.pathname + path + l.hash);
+            // Ensure no double slashes
+            var newPath = l.pathname.replace(/\/$/, '') + path;
+            window.history.replaceState(null, null, newPath + l.hash);
           }
         }
       }(window.location))
