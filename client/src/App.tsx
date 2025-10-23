@@ -9,12 +9,18 @@ import Home from "./pages/Home";
 import Marketplace from "./pages/Marketplace";
 import TribeDetail from "./pages/TribeDetail";
 import Cultures from "./pages/Cultures";
+import CultureDetail from "./pages/CultureDetail";
+import Sustainability from "./pages/Sustainability";
+import Stories from "./pages/Stories";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/cultures"} component={Cultures} />
+      <Route path={"/cultures/:id"} component={CultureDetail} />
+      <Route path={"/sustainability"} component={Sustainability} />
+      <Route path={"/stories"} component={Stories} />
       <Route path={"/marketplace"} component={Marketplace} />
       <Route path={"/marketplace/:id"} component={TribeDetail} />
       <Route path={"/404"} component={NotFound} />
