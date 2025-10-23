@@ -42,7 +42,7 @@ export default function Navigation() {
               <img src="/logo.png" alt="森乃嶼" className="w-12 h-12" />
               <div className="hidden sm:block">
                 <div className="font-bold text-lg text-foreground">森乃嶼</div>
-                <div className="text-xs text-muted-foreground">Senaiyu</div>
+                <div className="text-xs text-muted-foreground">Senan Yu</div>
               </div>
             </div>
           </Link>

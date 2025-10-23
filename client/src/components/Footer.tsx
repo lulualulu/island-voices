@@ -12,7 +12,7 @@ export default function Footer() {
               <img src="/logo.png" alt="森乃嶼" className="w-12 h-12" />
               <div>
                 <div className="font-bold text-lg text-foreground">森乃嶼</div>
-                <div className="text-xs text-muted-foreground">Senaiyu</div>
+                <div className="text-xs text-muted-foreground">Senan Yu</div>
               </div>
             </div>
             <p className="text-sm text-muted-foreground max-w-md">
@@ -97,7 +97,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>© 2025 森乃嶼 Senaiyu. 文化傳承 × 友善農業 × 生物多樣性</p>
+          <p>© 2025 森乃嶼 Senan Yu. 文化傳承 × 友善農業 × 生物多樣性</p>
         </div>
       </div>
     </footer>

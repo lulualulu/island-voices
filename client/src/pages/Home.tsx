@@ -85,7 +85,7 @@ export default function Home() {
             森乃嶼
           </h1>
           <p className="text-xl md:text-2xl mb-4 font-light">
-            Senaiyu
+            Senan Yu
           </p>
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
             文化傳承 × 友善農業 × 生物多樣性
