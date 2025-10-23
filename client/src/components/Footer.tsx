@@ -1,6 +1,7 @@
 import { Link } from 'wouter';
 import { Facebook, Instagram, Mail } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getAssetPath } from '@/utils/paths';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -12,7 +13,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <img src="/logo.png" alt="森乃嶼" className="w-12 h-12" />
+              <img src={getAssetPath('/logo.png')} alt="森乃嶼" className="w-12 h-12" />
               <div>
                 <div className="font-bold text-lg text-foreground">森乃嶼</div>
                 <div className="text-xs text-muted-foreground">Senan Yu</div>

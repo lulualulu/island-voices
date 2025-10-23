@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getAssetPath } from '@/utils/paths';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,7 +31,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer">
-              <img src="/logo.png" alt="森乃嶼" className="w-12 h-12" />
+              <img src={getAssetPath('/logo.png')} alt="森乃嶼" className="w-12 h-12" />
               <div className="hidden sm:block">
                 <div className="font-bold text-lg text-foreground">森乃嶼</div>
                 <div className="text-xs text-muted-foreground">Senan Yu</div>

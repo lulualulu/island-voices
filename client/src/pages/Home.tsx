@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { ArrowRight, Leaf, Users, Heart, ShoppingBag } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getAssetPath } from '@/utils/paths';
 
 export default function Home() {
   const { t } = useLanguage();
@@ -82,7 +83,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
         </div>
         <div className="relative z-10 container text-center text-white">
-          <img src="/logo.png" alt="森乃嶼" className="w-32 h-32 mx-auto mb-6" />
+          <img src={getAssetPath('/logo.png')} alt="森乃嶼" className="w-32 h-32 mx-auto mb-6" />
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             {t('home.hero.title')}
           </h1>

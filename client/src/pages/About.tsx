@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Leaf, Users, Heart, Target, Lightbulb, Building } from 'lucide-react';
+import { getAssetPath } from '@/utils/paths';
 
 export default function About() {
   const { t } = useLanguage();
@@ -78,7 +79,7 @@ export default function About() {
           </div>
           <div className="lg:order-first">
             <img 
-              src="/api/placeholder/600/400" 
+              src={getAssetPath('/logo.png')} 
               alt={t('about.mission.imageAlt')}
               className="w-full h-80 object-cover rounded-lg shadow-lg"
             />
