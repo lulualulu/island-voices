@@ -39,12 +39,10 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer">
-              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">島</span>
-              </div>
+              <img src="/logo.png" alt="森乃嶼" className="w-12 h-12" />
               <div className="hidden sm:block">
-                <div className="font-bold text-lg text-foreground">島嶼之聲</div>
-                <div className="text-xs text-muted-foreground">Island Voices</div>
+                <div className="font-bold text-lg text-foreground">森乃嶼</div>
+                <div className="text-xs text-muted-foreground">Senaiyu</div>
               </div>
             </div>
           </Link>

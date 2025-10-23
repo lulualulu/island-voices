@@ -80,11 +80,12 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
         </div>
         <div className="relative z-10 container text-center text-white">
+          <img src="/logo.png" alt="森乃嶼" className="w-32 h-32 mx-auto mb-6" />
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            島嶼之聲
+            森乃嶼
           </h1>
           <p className="text-xl md:text-2xl mb-4 font-light">
-            Voices of the Island
+            Senaiyu
           </p>
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
             文化傳承 × 友善農業 × 生物多樣性

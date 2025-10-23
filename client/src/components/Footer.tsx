@@ -9,12 +9,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">島</span>
-              </div>
+              <img src="/logo.png" alt="森乃嶼" className="w-12 h-12" />
               <div>
-                <div className="font-bold text-lg text-foreground">島嶼之聲</div>
-                <div className="text-xs text-muted-foreground">Island Voices</div>
+                <div className="font-bold text-lg text-foreground">森乃嶼</div>
+                <div className="text-xs text-muted-foreground">Senaiyu</div>
               </div>
             </div>
             <p className="text-sm text-muted-foreground max-w-md">
@@ -99,7 +97,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>© 2025 島嶼之聲 Island Voices. 文化傳承 × 友善農業 × 生物多樣性</p>
+          <p>© 2025 森乃嶼 Senaiyu. 文化傳承 × 友善農業 × 生物多樣性</p>
         </div>
       </div>
     </footer>
