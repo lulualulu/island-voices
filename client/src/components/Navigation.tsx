@@ -51,21 +51,15 @@ export default function Navigation() {
 
           {/* Language Switcher & Mobile Menu */}
           <div className="flex items-center gap-2">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Globe className="h-5 w-5" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setLanguage('zh')}>
-                  中文
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setLanguage('en')}>
-                  English
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Button 
+              variant="ghost" 
+              size="sm"
+              onClick={() => setLanguage(language === 'zh' ? 'en' : 'zh')}
+              className="gap-2"
+            >
+              <Globe className="h-4 w-4" />
+              <span className="text-sm">{language === 'zh' ? 'EN' : '中'}</span>
+            </Button>
 
             {/* Mobile Menu Button */}
             <Button
