@@ -10,7 +10,7 @@ const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(
 
 export default defineConfig({
   plugins,
-  base: process.env.NODE_ENV === 'production' ? '/island-voices-nina/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/island-voices/' : '/',
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
