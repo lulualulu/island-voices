@@ -7,11 +7,13 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Marketplace from "./pages/Marketplace";
 import TribeDetail from "./pages/TribeDetail";
+import Cultures from "./pages/Cultures";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/cultures"} component={Cultures} />
       <Route path={"/marketplace"} component={Marketplace} />
       <Route path={"/marketplace/:id"} component={TribeDetail} />
       <Route path={"/404"} component={NotFound} />
