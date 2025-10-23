@@ -4,19 +4,18 @@
   <meta charset="utf-8">
   <title>Island Voices</title>
   <script type="text/javascript">
-    // GitHub Pages SPA redirect
-    var pathSegmentsToKeep = 1;
+    // GitHub Pages SPA redirect - store the attempted URL
     var l = window.location;
     
-    // Extract the path after /island-voices/
+    // Get the full path that was attempted
     var segments = l.pathname.split('/').filter(Boolean);
-    var redirectPath = segments.slice(pathSegmentsToKeep).join('/');
+    var basePath = segments[0]; // 'island-voices'
+    var routePath = '/' + segments.slice(1).join('/'); // the route path like '/cultures'
     
-    // Redirect to index.html with the path encoded
+    // Redirect to base with route as parameter
     l.replace(
       l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      '/' + segments.slice(0, pathSegmentsToKeep).join('/') + 
-      '/?p=' + (redirectPath ? '/' + redirectPath : '') +
+      '/' + basePath + '/?p=' + encodeURIComponent(routePath) +
       (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
       l.hash
     );

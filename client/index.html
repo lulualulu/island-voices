@@ -22,8 +22,8 @@
         if (l.search) {
           var query = new URLSearchParams(l.search.substring(1));
           if (query.has('p')) {
-            var path = query.get('p');
-            // Ensure no double slashes
+            var path = decodeURIComponent(query.get('p'));
+            // Replace the current URL with the intended route
             var newPath = l.pathname.replace(/\/$/, '') + path;
             window.history.replaceState(null, null, newPath + l.hash);
           }
