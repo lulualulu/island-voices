@@ -1,7 +1,10 @@
 import { Link } from 'wouter';
 import { Facebook, Instagram, Mail } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
+  
   return (
     <footer className="bg-muted/50 border-t border-border mt-20">
       <div className="container py-12">
@@ -16,7 +19,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-muted-foreground max-w-md">
-              以文化為眼,凝視島嶼。透過原住民族的智慧與實踐,探索永續生活的可能性。
+              {t('footer.tagline')}
             </p>
             <div className="flex gap-4 mt-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -33,7 +36,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">快速連結</h3>
+            <h3 className="font-semibold text-foreground mb-4">{t('footer.quicklinks')}</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/cultures">
@@ -68,28 +71,28 @@ export default function Footer() {
 
           {/* About */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">關於</h3>
+            <h3 className="font-semibold text-foreground mb-4">{t('footer.about')}</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/about">
                   <span className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
-                    關於我們
+                    {t('nav.about')}
                   </span>
                 </Link>
               </li>
               <li>
                 <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  聯絡我們
+                  {t('footer.contact')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  合作夥伴
+                  {t('footer.partners')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  隱私政策
+                  {t('footer.privacy')}
                 </a>
               </li>
             </ul>
@@ -97,7 +100,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>© 2025 森乃嶼 Senan Yu. 文化傳承 × 友善農業 × 生物多樣性</p>
+          <p>{t('footer.copyright')}</p>
         </div>
       </div>
     </footer>

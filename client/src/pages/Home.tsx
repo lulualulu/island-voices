@@ -4,8 +4,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { ArrowRight, Leaf, Users, Heart, ShoppingBag } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
+  const { t } = useLanguage();
   const tribes = [
     { name: '阿美族', nameEn: 'Amis', color: 'bg-red-100 hover:bg-red-200' },
     { name: '排灣族', nameEn: 'Paiwan', color: 'bg-orange-100 hover:bg-orange-200' },
@@ -20,27 +22,27 @@ export default function Home() {
   const features = [
     {
       icon: <Users className="h-8 w-8 text-primary" />,
-      title: '16族文化',
-      titleEn: 'Indigenous Cultures',
-      description: '深入探索台灣原住民16族的語言、傳統與生活智慧',
+      titleKey: 'home.feature1.title',
+      subtitleKey: 'home.feature1.subtitle',
+      descKey: 'home.feature1.desc',
     },
     {
       icon: <Leaf className="h-8 w-8 text-secondary" />,
-      title: '永續農業',
-      titleEn: 'Sustainable Agriculture',
-      description: '傳統農耕智慧與友善環境的現代實踐',
+      titleKey: 'home.feature2.title',
+      subtitleKey: 'home.feature2.subtitle',
+      descKey: 'home.feature2.desc',
     },
     {
       icon: <Heart className="h-8 w-8 text-accent" />,
-      title: '生物多樣性',
-      titleEn: 'Biodiversity',
-      description: '原住民傳統生態知識守護島嶼的豐富生命',
+      titleKey: 'home.feature3.title',
+      subtitleKey: 'home.feature3.subtitle',
+      descKey: 'home.feature3.desc',
     },
     {
       icon: <ShoppingBag className="h-8 w-8 text-primary" />,
-      title: '部落市集',
-      titleEn: 'Tribal Marketplace',
-      description: '以故事連結產品,用消費支持文化傳承',
+      titleKey: 'home.feature4.title',
+      subtitleKey: 'home.feature4.subtitle',
+      descKey: 'home.feature4.desc',
     },
   ];
 
@@ -82,23 +84,23 @@ export default function Home() {
         <div className="relative z-10 container text-center text-white">
           <img src="/logo.png" alt="森乃嶼" className="w-32 h-32 mx-auto mb-6" />
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            森乃嶼
+            {t('home.hero.title')}
           </h1>
           <p className="text-xl md:text-2xl mb-4 font-light">
-            Senan Yu
+            {t('home.hero.subtitle')}
           </p>
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            文化傳承 × 友善農業 × 生物多樣性
+            {t('home.hero.tagline')}
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href="/cultures">
               <Button size="lg" className="gap-2">
-                探索族群文化 <ArrowRight className="h-4 w-4" />
+                {t('home.hero.cta1')} <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
             <Link href="/marketplace">
               <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white/20">
-                進入部落市集
+                {t('home.hero.cta2')}
               </Button>
             </Link>
           </div>
@@ -108,10 +110,9 @@ export default function Home() {
       {/* Features Section */}
       <section className="container py-20">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">以文化為眼,凝視島嶼</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('home.section1.title')}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            透過原住民族的智慧與實踐,我們探索永續生活的可能性,
-            將文化保存、生態保育與社會發展緊密連結
+            {t('home.section1.desc')}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -119,9 +120,9 @@ export default function Home() {
             <Card key={index} className="border-2 hover:border-primary transition-colors">
               <CardContent className="p-6">
                 <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground mb-2">{feature.titleEn}</p>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                <h3 className="text-xl font-semibold mb-2">{t(feature.titleKey)}</h3>
+                <p className="text-sm text-muted-foreground mb-2">{t(feature.subtitleKey)}</p>
+                <p className="text-sm text-muted-foreground">{t(feature.descKey)}</p>
               </CardContent>
             </Card>
           ))}
@@ -132,9 +133,9 @@ export default function Home() {
       <section className="bg-muted/30 py-20">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">認識台灣原住民16族</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('home.tribes.title')}</h2>
             <p className="text-muted-foreground">
-              點擊探索各族群的文化、語言與生活智慧
+              {t('home.tribes.desc')}
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
@@ -152,7 +153,7 @@ export default function Home() {
           <div className="text-center mt-8">
             <Link href="/cultures">
               <Button variant="outline" className="gap-2">
-                查看全部16族 <ArrowRight className="h-4 w-4" />
+                {t('home.tribes.viewall')} <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
           </div>
@@ -162,9 +163,9 @@ export default function Home() {
       {/* Stories Section */}
       <section className="container py-20">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">深度故事</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('home.stories.title')}</h2>
           <p className="text-muted-foreground">
-            走進部落,聆聽土地與人的對話
+            {t('home.stories.desc')}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -180,7 +181,7 @@ export default function Home() {
                 <p className="text-sm text-muted-foreground mb-4">{story.description}</p>
                 <Link href="/stories">
                   <Button variant="ghost" className="gap-2 px-0">
-                    閱讀更多 <ArrowRight className="h-4 w-4" />
+                    {t('home.stories.readmore')} <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
               </CardContent>
@@ -193,15 +194,14 @@ export default function Home() {
       <section className="bg-primary text-primary-foreground py-20">
         <div className="container text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            用行動支持原住民文化與永續發展
+            {t('home.cta.title')}
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            透過部落市集,您的每一次購買都直接支持部落的永續農業、
-            文化保存與生物多樣性保護
+            {t('home.cta.desc')}
           </p>
           <Link href="/marketplace">
             <Button size="lg" variant="secondary" className="gap-2">
-              探索部落市集 <ArrowRight className="h-4 w-4" />
+              {t('home.cta.button')} <ArrowRight className="h-4 w-4" />
             </Button>
           </Link>
         </div>
