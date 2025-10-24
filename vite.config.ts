@@ -6,7 +6,18 @@ import path from "path";
 import { defineConfig } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime()];
+// Plugin to replace static paths in HTML with correct base path
+function htmlBasePathPlugin() {
+  return {
+    name: 'html-base-path',
+    transformIndexHtml(html: string) {
+      const base = process.env.NODE_ENV === 'production' ? '/island-voices' : '';
+      return html.replace(/href="\/logo\.png"/g, `href="${base}/logo.png"`);
+    }
+  };
+}
+
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), htmlBasePathPlugin()];
 
 export default defineConfig({
   plugins,
